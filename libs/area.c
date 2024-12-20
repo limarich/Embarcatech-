@@ -74,4 +74,25 @@ float convert_to_meters(float value, const char *unit)
   }
 }
 
+/* Função de conversão de outras unidades de área para quilômetros quadrados */
+float convert_to_kilometers(float value, char *unit)
+{
+  if (strcmp(unit, "mm") == 0)
+  {
+    return value * 0.000000000001;
+  }
+  else if (strcmp(unit, "cm") == 0)
+  {
+    return value * 0.0000000001;
+  }
+  else if (strcmp(unit, "m") == 0)
+  {
+    return value * 0.000001;
+  }
+  else if (strcmp(unit, "ha") == 0)
+  {
+    return value * 0.01;
+  }
+}
+
 #endif

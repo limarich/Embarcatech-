@@ -1,7 +1,6 @@
-#ifndef CONVERSOR_H
-#define CONVERSOR_H
+#ifndef CONVERSOR_MPS_KMH_H
+#define CONVERSOR_MPS_KMH_H
 
-// Declaração da função de conversão
-void metros_por_segundo_para_kilometros_por_hora();
+float metros_por_segundo_para_quilometros_por_hora(float mps);
 
 #endif

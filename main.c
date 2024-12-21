@@ -33,6 +33,55 @@ int main()
     printf("\n=================================================================================================================\n");
     scanf("%d", &op);
 
+    switch (op)
+    {
+    case 1:
+      printf("Qual a unidade da área de entrada (mm, cm, m, ha, km)? ");
+      scanf("%s", entrada);
+      printf("Qual a unidade da área de saída (mm, cm, m, ha, km)? ");
+      scanf("%s", saida);
+      printf("Informe o tamanho da área a ser convertida: ");
+      scanf("%lf", &area);
+      printf("\n");
+      if ((strcmp(entrada, saida) == 0) || (area <= 0))
+      {
+        printf("As unidade de entrada e saída para conversão são iguais ou a área informada é menor que 0!\n");
+        printf("Desculpe, mas a execução será finalizada!\n");
+        op = 0;
+      }
+      else if (strcmp(saida, "mm") == 0)
+      {
+        convert_to_millimeter(area, entrada);
+      }
+      else if (strcmp(saida, "cm") == 0)
+      {
+        convert_to_centimeter(area, entrada);
+      }
+      else if (strcmp(saida, "m") == 0)
+      {
+        convert_to_meters(area, entrada);
+      }
+      else if (strcmp(saida, "m") == 0)
+      {
+        convert_to_meters(area, entrada);
+      }
+      else if (strcmp(saida, "ha") == 0)
+      {
+        convert_to_meters(area, entrada);
+      }
+      else if (strcmp(saida, "km") == 0)
+      {
+        convert_to_meters(area, entrada);
+      }
+      break;
+
+    default:
+      printf("Opção inválida, digite:");
+      printf("0. Para sair");
+      printf("10. Para retornar ao menu principal");
+      break;
+    }
+
   } while (op != 0);
 
   /*float mps, kmh;

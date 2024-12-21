@@ -1,98 +1,100 @@
 #ifndef _AREA_H_
 #define _AREA_H_
+#include <stdio.h>
 #include <string.h>
 /*
   Projeto desenvolvido pelo: Subgrupo 4
+
+  Biblioteca desenvolvida por: Jônatas da Silva <jonatas.silva.roots@gmail.com>
 */
 
-// constantes para multiplicação
-#define MM2_PARA_M2 0.000001
-#define CM2_PARA_M2 0.0001
-#define KM2_PARA_M2 1000000.0
-#define HA_PARA_M2 10000.0
-
 /* Função de conversão de outras unidades de área para metros milimetro quadrado */
-float convert_to_millimeter(float value, char *unit)
+double convert_to_millimeter(double value, char *unit)
 {
   if (strcmp(unit, "cm") == 0)
   {
-    return value * 100;
+    return (double)(value * 1e+2);
   }
   else if (strcmp(unit, "m") == 0)
   {
-    return value * 1000000.0;
+    return (double)(value * 1e+6);
   }
   else if (strcmp(unit, "km") == 0)
   {
-    return value * 1000000000000.0;
+    return (double)(value * 1e+12);
   }
   else if (strcmp(unit, "ha") == 0)
   {
-    return value * 10000000000.0;
+    return (double)(value * 1e+10);
   }
 }
 
 /* Função de conversão de outras unidades de área para centímetros quadrado */
-float convert_to_centimeter(float value, char *unit)
+long double convert_to_centimeter(double value, char *unit)
 {
   if (strcmp(unit, "mm") == 0)
   {
-    return value * 0.01;
+    return (long double)(value * 1e-2);
   }
   else if (strcmp(unit, "m") == 0)
   {
-    return value * 10000.0;
+    return (long double)(value * 1e-4);
   }
   else if (strcmp(unit, "km") == 0)
   {
-    return value * 10000000000.0;
+    return (long double)(value * 1e+10);
   }
   else if (strcmp(unit, "ha") == 0)
   {
-    return value * 100000000.0;
+    return (long double)(value * 1e+8);
   }
 }
 
 /* Função de conversão de outras unidades de área para metros quadrados */
-float convert_to_meters(float value, const char *unit)
+double convert_to_meters(double value, const char *unit)
 {
   if (strcmp(unit, "mm") == 0)
   {
-    return value * 0.000001;
+    return (double)(value * 1e-6);
   }
   else if (strcmp(unit, "cm") == 0)
   {
-    return value * 0.0001;
+    return (double)(value * 1e-4);
   }
   else if (strcmp(unit, "km") == 0)
   {
-    return value * 1000000.0;
+    return (double)(value * 1e+6);
   }
   else if (strcmp(unit, "ha") == 0)
   {
-    return value * 10000.0;
+    return (double)(value * 1e+4);
   }
 }
 
 /* Função de conversão de outras unidades de área para quilômetros quadrados */
-float convert_to_kilometers(float value, char *unit)
+double convert_to_kilometers(double value, char *unit)
 {
+  double result = 0.0;
   if (strcmp(unit, "mm") == 0)
   {
-    return value * 0.000000000001;
+    result = (double)value * 1e-12;
+    return result;
   }
   else if (strcmp(unit, "cm") == 0)
   {
-    return value * 0.0000000001;
+    result = (double)value * 1e-10;
+    return result;
   }
   else if (strcmp(unit, "m") == 0)
   {
-    return value * 0.000001;
+    result = (double)value * 1e-6;
+    return result;
   }
   else if (strcmp(unit, "ha") == 0)
   {
-    return value * 0.01;
+    result = (double)value * 1e-2;
   }
+  return (double)result;
 }
 
 #endif

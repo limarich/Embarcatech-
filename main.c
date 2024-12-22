@@ -1,10 +1,11 @@
 #include <stdio.h>
+#include <stdlib.h> // para system pause
 #include <locale.h>
 #include <string.h>
 
 // local libraries
-#include "area.h"
-#include "conversor_mps_kmh.h"
+#include "libs/area.h"
+#include "libs/conversor_mps_kmh.h"
 
 int main()
 {
@@ -16,85 +17,126 @@ int main()
   char saida[3];
   char entrada[3];
 
-  // Menu central da aplicaÁ„o
+  // Menu central da aplica√ß√£o
   do
   {
-    printf("\n=================================================================================================================\n");
-    printf("=================================Bem vindo ao Sistema de convers„o de unidades=====================================\n");
-    printf("--------------------------------------------------- Embarca_kit ---------------------------------------------------\n");
-    printf("Escolha a convers„o desejada:");
-    printf("1. ¡rea (milÌmetros quadrados, centÌmetros quadrados, metros quadrados, hectÙmetros quadrados e quilÙmetro quadrados)");
-    printf("2. Volume (metros c˙bicos, litros, galıes)");
-    printf("3. Comprimento (metro, centÌmetro, milÌmetro) ");
-    printf("4. Massa (quilograma, grama, tonelada)");
-    printf("5. Temperatura (Celsius, Fahrenheit, Kelvin)");
-    printf("6. Velocidade (km/h, m/s, mph)");
-    printf("7. Energia (Watts, quilowatts, cavalos-vapor)");
-    printf("8. tempo (segundos, minutos, horas)");
-    printf("\n=================================================================================================================\n");
+    printf("\n=====================================================================================================================\n");
+    printf("=================================Bem vindo ao Sistema de convers√£o de unidades=======================================\n");
+    printf("------------------------------------------------- Embarca_kit -------------------------------------------------------\n");
+    printf("1. √Årea (mil√≠metros quadrados, cent√≠metros quadrados, metros quadrados, hect√¥metros quadrados e quil√¥metro quadrados)\n");
+    printf("2. Volume (metros c√∫bicos, litros, gal√µes)\n");
+    printf("3. Comprimento (metro, cent√≠metro, mil√≠metro)\n");
+    printf("4. Massa (quilograma, grama, tonelada)\n");
+    printf("5. Temperatura (Celsius, Fahrenheit, Kelvin)\n");
+    printf("6. Velocidade (km/h, m/s, mph)\n");
+    printf("7. Energia (Watts, quilowatts, cavalos-vapor)\n");
+    printf("8. tempo (segundos, minutos, horas)\n");
+    printf("=====================================================================================================================\n");
+    printf("Escolha a convers√£o desejada: ");
     scanf("%d", &op);
 
     switch (op)
     {
     case 1:
-      printf("Qual a unidade da ·rea de entrada (mm, cm, m, ha, km)? ");
+      printf("Qual a unidade da √°rea de entrada (mm, cm, m, ha, km)? ");
       scanf("%s", entrada);
-      printf("Qual a unidade da ·rea de saÌda (mm, cm, m, ha, km)? ");
+      printf("Qual a unidade da √°rea de sa√≠da (mm, cm, m, ha, km)? ");
       scanf("%s", saida);
-      printf("Informe o tamanho da ·rea a ser convertida: ");
+      if (strcmp(entrada, saida) == 0)
+      {
+        printf("As unidade de entrada e sa√≠da para convers√£o s√£o iguais.\n");
+        printf("Desculpe, mas a execu√ß√£o ser√° finalizada!\n");
+        op = 0;
+        break;
+      }
+      printf("Informe o tamanho da √°rea a ser convertida: ");
       scanf("%lf", &area);
       printf("\n");
-      if ((strcmp(entrada, saida) == 0) || (area <= 0))
+      if (area <= 0)
       {
-        printf("As unidade de entrada e saÌda para convers„o s„o iguais ou a ·rea informada È menor que 0!\n");
-        printf("Desculpe, mas a execuÁ„o ser· finalizada!\n");
+        printf("A √°rea informada √© menor que 0!\n");
+        printf("Desculpe, mas a execu√ß√£o ser√° finalizada!\n");
         op = 0;
+        break;
       }
       else if (strcmp(saida, "mm") == 0)
       {
-        convert_to_millimeter(area, entrada);
+        printf("√Årea convertida, o valor retornado √©: %.15lf\n", convert_to_millimeter(area, entrada));
+        printf("O que deseja fazer? Digite:\n");
+        printf("0. Para sair\n");
+        printf("10. Para retornar ao menu principal\n");
+        printf("Digite a escolha: ");
+        scanf("%d", &op);
+        break;
       }
       else if (strcmp(saida, "cm") == 0)
       {
-        convert_to_centimeter(area, entrada);
+        printf("√Årea convertida, o valor retornado √©: %.15lf\n", convert_to_centimeter(area, entrada));
+        printf("O que deseja fazer? Digite:\n");
+        printf("0. Para sair\n");
+        printf("10. Para retornar ao menu principal\n");
+        printf("Digite a escolha: ");
+        scanf("%d", &op);
+        break;
       }
       else if (strcmp(saida, "m") == 0)
       {
-        convert_to_meters(area, entrada);
+        printf("√Årea convertida, o valor retornado √©: %.15lf\n", convert_to_meters(area, entrada));
+        printf("O que deseja fazer? Digite:\n");
+        printf("0. Para sair\n");
+        printf("10. Para retornar ao menu principal\n");
+        printf("Digite a escolha: ");
+        scanf("%d", &op);
+        break;
       }
       else if (strcmp(saida, "ha") == 0)
       {
-        convert_to_hectare(area, entrada);
+        printf("√Årea convertida, o valor retornado √©: %.15lf\n", convert_to_hectare(area, entrada));
+        printf("O que deseja fazer? Digite:\n");
+        printf("0. Para sair\n");
+        printf("10. Para retornar ao menu principal\n");
+        printf("Digite a escolha: ");
+        scanf("%d", &op);
+        break;
       }
       else if (strcmp(saida, "km") == 0)
       {
-        convert_to_kilometers(area, entrada);
+        printf("√Årea convertida, o valor retornado √©: %.15lf\n", convert_to_kilometers(area, entrada));
+        printf("O que deseja fazer? Digite:\n");
+        printf("0. Para sair\n");
+        printf("10. Para retornar ao menu principal\n");
+        printf("Digite a escolha: ");
+        scanf("%d", &op);
+        break;
       }
       break;
 
+    case 2:
+      break;
     default:
-      printf("OpÁ„o inv·lida, digite:");
-      printf("0. Para sair");
-      printf("10. Para retornar ao menu principal");
+      printf("Op√ß√£o inv√°lida, digite:\n");
+      printf("0. Para sair\n");
+      printf("10. Para retornar ao menu principal\n");
+      printf("Digite a escolha: ");
+      scanf("%d", &op);
       break;
     }
-
   } while (op != 0);
 
   /*float mps, kmh;
 
   printf("Digite a velocidade em metros por segundo (m/s): ");
 
-  // Valida a entrada do usu√°rio
+  // Valida a entrada do usu√É¬°rio
   if (scanf("%f", &mps) != 1)
   {
-    printf("Entrada inv·lida! Por favor, insira um n˙mero.\n");
+    printf("Entrada inv√°lida! Por favor, insira um n√∫mero.\n");
     return 1;
   }
 
   kmh = metros_por_segundo_para_quilometros_por_hora(mps);
 
-  printf("%.2f metros por segundo equivalem a %.2f quilÙmetros por hora.\n", mps, kmh);*/
+  printf("%.2f metros por segundo equivalem a %.2f quil√¥metros por hora.\n", mps, kmh);*/
   system("pause");
   return 1;
 }

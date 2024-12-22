@@ -62,17 +62,13 @@ int main()
       {
         convert_to_meters(area, entrada);
       }
-      else if (strcmp(saida, "m") == 0)
-      {
-        convert_to_meters(area, entrada);
-      }
       else if (strcmp(saida, "ha") == 0)
       {
-        convert_to_meters(area, entrada);
+        convert_to_hectare(area, entrada);
       }
       else if (strcmp(saida, "km") == 0)
       {
-        convert_to_meters(area, entrada);
+        convert_to_kilometers(area, entrada);
       }
       break;
 

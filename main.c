@@ -3,6 +3,7 @@
 #include <string.h>
 
 // local libraries
+#include "area.h"
 #include "conversor_mps_kmh.h"
 
 int main()

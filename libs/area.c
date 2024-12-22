@@ -71,6 +71,28 @@ double convert_to_meters(double value, const char *unit)
   }
 }
 
+/* Função de conversão de outras unidades de área para hectômetros quadrados */
+double convert_to_hectare(double value, const char *unit)
+{
+  if (strcmp(unit, "mm") == 0)
+  {
+    return (double)(value * 1e-10);
+  }
+  else if (strcmp(unit, "cm") == 0)
+  {
+    return (double)(value * 1e-8);
+  }
+  else if (strcmp(unit, "m") == 0)
+  {
+    return (double)(value * 1e-4);
+  }
+  else if (strcmp(unit, "km") == 0)
+  {
+    return (double)(value * 1e+2);
+  }
+  return 0.0;
+}
+
 /* Função de conversão de outras unidades de área para quilômetros quadrados */
 double convert_to_kilometers(double value, char *unit)
 {

@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "*.html": "html",
+        "*.css": "css",
+        "conversor_unidade_tempo.h": "c"
+    }
+}

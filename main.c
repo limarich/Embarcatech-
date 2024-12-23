@@ -9,6 +9,7 @@
 #include "libs/area.h"
 #include "libs/temperatura.h"
 #include "libs/conversor_unidades_storage.h"
+#include "libs/conversor_potencia.h"
 
 int main()
 {
@@ -33,7 +34,7 @@ int main()
         printf("4. Massa (quilograma, grama, tonelada)\n");
         printf("5. Temperatura (Celsius, Fahrenheit, Kelvin)\n");
         printf("6. Velocidade (km/h, m/s, mph)\n");
-        printf("7. Energia (Watts, quilowatts, cavalos-vapor)\n");
+        printf("7. Potencia (Watts, quilowatts, cavalos-vapor)\n");
         printf("8. Tempo (segundos, minutos, horas)\n");
         printf("9. Armazenamento (Bits, Bytes, Kilobytes, Megabytes, Gigabytes, Terabytes)\n");
         printf("=====================================================================================================================\n");
@@ -97,6 +98,31 @@ int main()
         }
         break;
 
+
+         case 7: // Conversão de potência
+         {
+            double valorPotencia;
+            char unidadeOrigem[3], unidadeDestino[3];
+
+            printf("Digite o valor da potência a ser convertido: ");
+            scanf("%lf", &valorPotencia);
+
+            printf("Digite a unidade de origem (W, kW, cv): ");
+            scanf("%s", unidadeOrigem);
+
+            printf("Digite a unidade de destino (W, kW, cv): ");
+            scanf("%s", unidadeDestino);
+
+            double resultadoPotencia = conversor_potencia(valorPotencia, unidadeOrigem, unidadeDestino);
+
+            if (resultadoPotencia != -1)
+                printf("A conversão de %.2lf %s é %.2lf %s.\n", valorPotencia, unidadeOrigem, resultadoPotencia, unidadeDestino);
+            else
+                printf("ERRO: Conversão inválida ou não suportada.\n");
+        }
+        break;
+
+
         case 8: // Conversão de tempo
             printf("Qual a unidade de entrada (s para segundos, m para minutos, h para horas)? ");
             scanf(" %c", &unidadeEntrada);
@@ -130,6 +156,8 @@ int main()
             else
                 printf("Tempo convertido: %.2f %c\n", resultadoTempo, unidadeSaida);
             break;
+
+
         case 9: // Conversão de unidades de armazenamento
         {
             double value;

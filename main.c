@@ -8,6 +8,7 @@
 #include "libs/conversor_unidade_tempo.h"
 #include "libs/area.h"
 #include "libs/temperatura.h"
+#include "libs/conversor_unidades_storage.h"
 
 int main()
 {
@@ -34,6 +35,7 @@ int main()
         printf("6. Velocidade (km/h, m/s, mph)\n");
         printf("7. Energia (Watts, quilowatts, cavalos-vapor)\n");
         printf("8. Tempo (segundos, minutos, horas)\n");
+        printf("9. Armazenamento (Bits, Bytes, Kilobytes, Megabytes, Gigabytes, Terabytes)\n");
         printf("=====================================================================================================================\n");
         printf("Escolha a conversão desejada: ");
         scanf("%d", &op);
@@ -128,7 +130,30 @@ int main()
             else
                 printf("Tempo convertido: %.2f %c\n", resultadoTempo, unidadeSaida);
             break;
+        case 9: // Conversão de unidades de armazenamento
+        {
+            double value;
+            int fromUnit, toUnit;
 
+            printf("Digite o valor a ser convertido: ");
+            scanf("%lf", &value);
+
+            printf("Escolha a unidade de origem:\n");
+            printf("0 - Bit\n1 - Byte\n2 - Kilobyte\n3 - Megabyte\n4 - Gigabyte\n5 - Terabyte\n");
+            scanf("%d", &fromUnit);
+
+            printf("Escolha a unidade de destino:\n");
+            printf("0 - Bit\n1 - Byte\n2 - Kilobyte\n3 - Megabyte\n4 - Gigabyte\n5 - Terabyte\n");
+            scanf("%d", &toUnit);
+
+            double convertedValue = convert_storage(value, (StorageUnit)fromUnit, (StorageUnit)toUnit);
+
+            if (convertedValue != -1)
+                printf("Resultado: %.6f\n", convertedValue);
+            else
+                printf("ERRO: Unidades inválidas ou conversão não suportada.\n");
+        }
+        break;
         default:
             printf("Opção inválida, digite:\n");
             printf("0. Para sair\n");

@@ -2,12 +2,22 @@
 
 **embarca_kit** é uma biblioteca em C para conversão de bases numéricas, integrada com suporte a um sistema de conversão de unidades de medidas. Ideal para aplicações relacionadas a cálculos em obras, engenharia e projetos técnicos.  
 
+## 👨🏻‍💻 Componentes do grupo 4
+
+- Emily Cerqueira
+- Victor G. S.
+- John Porto
+- Jônatas da Silva
+- Joseph
+- Julia Santana
+- Richard Lima
+
 ## 🚀 Funcionalidades  
 
 - Conversão entre diferentes bases numéricas (binária, decimal, octal e hexadecimal).
 - Suporte para unidades de medida usadas em construção civil, incluindo:
   - Comprimento (metros, milímetros, polegadas, pés).
-  - Área (metros quadrados, pés quadrados, acres).
+  - Área (milímetros quadrados, centímetros quadrados, metros quadrados, hectômetros quadrados e quilômetro quadrados).
   - Volume (metros cúbicos, litros, galões).
 - Fácil integração com projetos em C.
 - Simples de usar e configurável.
@@ -20,10 +30,21 @@
 ## 📦 Instalação  
 
 Para utilizar a biblioteca Embarcatech:  
-1. Clone este repositório:  
-   ```bash
-   git clone https://github.com/seu-usuario/embarcatech.git
 
+1. Clone este repositório:
+  ```bash
+   git clone https://github.com/seu-usuario/embarcatech.git
+  ```
+2. Realize a compilação, da seguinte forma:
+  ```bash
+   gcc -o conversor-grupo-4 main.c [libs/nome_da_lib.c]
+  ```
+> Exemplo: `gcc -o conversor-grupo-4 main.c libs/area.c libs/   conversor_mps_kmh.c`
+
+## ⚙️ Execução do sistema:
+  ```bash
+   ./conversor-grupo-4 ou ./conversor-grupo-4.exe
+  ```
 
 ## 🌍 Aplicações Práticas
 - A biblioteca embarca_kit foi projetada para simplificar conversões importantes em cenários como:

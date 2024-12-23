@@ -6,6 +6,7 @@
 // local libraries
 #include "libs/area.h"
 #include "libs/conversor_mps_kmh.h"
+#include "libs/conversor.h" // lib responsável por converter temperaturas
 
 int main()
 {
@@ -120,6 +121,39 @@ int main()
       printf("Digite a escolha: ");
       scanf("%d", &op);
       break;
+    
+     case 5: // Conversão de temperatura
+        {
+            float inputTemp;
+            char inputUnit, outputUnit;
+
+            // Entrada do usuário
+            printf("Insira a temperatura e a unidade de origem (ex: 100 C): ");
+            scanf("%f %c", &inputTemp, &inputUnit);
+
+            printf("Para qual unidade você deseja converter? (C, F, K): ");
+            scanf(" %c", &outputUnit);
+
+            // Chamar a função de conversão
+            float convertedTemp = converterTemperatura(inputTemp, inputUnit, outputUnit);
+
+            // Verificar e exibir o resultado
+            if (convertedTemp != -1)
+            {
+                printf("A temperatura convertida é: %.2f %c\n", convertedTemp, outputUnit);
+            }
+            else
+            {
+                printf("ERRO: Unidades inválidas ou conversão não suportada.\n");
+            }
+
+            printf("O que deseja fazer? Digite:\n");
+            printf("0. Para sair\n");
+            printf("10. Para retornar ao menu principal\n");
+            printf("Digite a escolha: ");
+            scanf("%d", &op);
+            break;
+        }
     }
   } while (op != 0);
 

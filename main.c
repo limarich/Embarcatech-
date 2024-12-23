@@ -7,6 +7,7 @@
 #include "libs/conversor_mps_kmh.h"
 #include "libs/conversor_unidade_tempo.h"
 #include "libs/area.h"
+#include "libs/temperatura.h"
 
 int main()
 {
@@ -32,7 +33,7 @@ int main()
         printf("5. Temperatura (Celsius, Fahrenheit, Kelvin)\n");
         printf("6. Velocidade (km/h, m/s, mph)\n");
         printf("7. Energia (Watts, quilowatts, cavalos-vapor)\n");
-        printf("8. tempo (segundos, minutos, horas)\n");
+        printf("8. Tempo (segundos, minutos, horas)\n");
         printf("=====================================================================================================================\n");
         printf("Escolha a conversão desejada: ");
         scanf("%d", &op);
@@ -53,7 +54,6 @@ int main()
             }
             printf("Informe o tamanho da área a ser convertida: ");
             scanf("%lf", &area);
-            printf("\n");
             if (area <= 0)
             {
                 printf("A área informada é menor que 0!\n");
@@ -61,60 +61,39 @@ int main()
                 op = 0;
                 break;
             }
-            else if (strcmp(saida, "mm") == 0)
-            {
-                printf("Área convertida, o valor retornado é: %.15lf\n", convert_to_millimeter(area, entrada));
-                printf("O que deseja fazer? Digite:\n");
-                printf("0. Para sair\n");
-                printf("10. Para retornar ao menu principal\n");
-                printf("Digite a escolha: ");
-                scanf("%d", &op);
-                break;
-            }
+
+            // Conversão da área
+            if (strcmp(saida, "mm") == 0)
+                printf("Área convertida: %.15lf\n", convert_to_millimeter(area, entrada));
             else if (strcmp(saida, "cm") == 0)
-            {
-                printf("Área convertida, o valor retornado é: %.15lf\n", convert_to_centimeter(area, entrada));
-                printf("O que deseja fazer? Digite:\n");
-                printf("0. Para sair\n");
-                printf("10. Para retornar ao menu principal\n");
-                printf("Digite a escolha: ");
-                scanf("%d", &op);
-                break;
-            }
+                printf("Área convertida: %.15lf\n", convert_to_centimeter(area, entrada));
             else if (strcmp(saida, "m") == 0)
-            {
-                printf("Área convertida, o valor retornado é: %.15lf\n", convert_to_meters(area, entrada));
-                printf("O que deseja fazer? Digite:\n");
-                printf("0. Para sair\n");
-                printf("10. Para retornar ao menu principal\n");
-                printf("Digite a escolha: ");
-                scanf("%d", &op);
-                break;
-            }
+                printf("Área convertida: %.15lf\n", convert_to_meters(area, entrada));
             else if (strcmp(saida, "ha") == 0)
-            {
-                printf("Área convertida, o valor retornado é: %.15lf\n", convert_to_hectare(area, entrada));
-                printf("O que deseja fazer? Digite:\n");
-                printf("0. Para sair\n");
-                printf("10. Para retornar ao menu principal\n");
-                printf("Digite a escolha: ");
-                scanf("%d", &op);
-                break;
-            }
+                printf("Área convertida: %.15lf\n", convert_to_hectare(area, entrada));
             else if (strcmp(saida, "km") == 0)
-            {
-                printf("Área convertida, o valor retornado é: %.15lf\n", convert_to_kilometers(area, entrada));
-                printf("O que deseja fazer? Digite:\n");
-                printf("0. Para sair\n");
-                printf("10. Para retornar ao menu principal\n");
-                printf("Digite a escolha: ");
-                scanf("%d", &op);
-                break;
-            }
+                printf("Área convertida: %.15lf\n", convert_to_kilometers(area, entrada));
             break;
 
-        case 2:
-            break;
+        case 5: // Conversão de temperatura
+        {
+            float inputTemp;
+            char inputUnit, outputUnit;
+
+            printf("Insira a temperatura e a unidade de origem (ex: 100 C): ");
+            scanf("%f %c", &inputTemp, &inputUnit);
+
+            printf("Para qual unidade você deseja converter? (C, F, K): ");
+            scanf(" %c", &outputUnit);
+
+            float convertedTemp = converterTemperatura(inputTemp, inputUnit, outputUnit);
+
+            if (convertedTemp != -1)
+                printf("A temperatura convertida é: %.2f %c\n", convertedTemp, outputUnit);
+            else
+                printf("ERRO: Unidades inválidas ou conversão não suportada.\n");
+        }
+        break;
 
         case 8: // Conversão de tempo
             printf("Qual a unidade de entrada (s para segundos, m para minutos, h para horas)? ");
@@ -145,18 +124,11 @@ int main()
             float resultadoTempo = conversor_de_tempo(unidadeEntrada, unidadeSaida, (float)valorTempo);
 
             if (resultadoTempo == -1)
-            {
                 printf("Unidade de tempo inválida. Verifique as unidades fornecidas.\n");
-                break;
-            }
-
-            printf("Tempo convertido: %.2f %c\n", resultadoTempo, unidadeSaida);
-            printf("O que deseja fazer? Digite:\n");
-            printf("0. Para sair\n");
-            printf("10. Para retornar ao menu principal\n");
-            printf("Digite a escolha: ");
-            scanf("%d", &op);
+            else
+                printf("Tempo convertido: %.2f %c\n", resultadoTempo, unidadeSaida);
             break;
+
         default:
             printf("Opção inválida, digite:\n");
             printf("0. Para sair\n");

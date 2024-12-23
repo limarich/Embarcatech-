@@ -1,9 +1,7 @@
-// potencia.h
 #ifndef CONVERSOR_POTENCIA_H
 #define CONVERSOR_POTENCIA_H
 
-// Função para converter potência
-// Aceita unidades: W (Watts), k (Kilowatts), c (Cavalos-vapor)
+// Declaração da função
 double conversor_potencia(double valor, char* fromUnit, char* toUnit);
 
-#endif // POTENCIA_H
+#endif // CONVERSOR_POTENCIA_H

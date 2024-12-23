@@ -113,7 +113,7 @@ int main()
             printf("Digite a unidade de destino (W, kW, cv): ");
             scanf("%s", unidadeDestino);
 
-            double resultadoPotencia = conversor_potencia(valorPotencia, unidadeOrigem[0], unidadeDestino[0]);
+            double resultadoPotencia = conversor_potencia(valorPotencia, unidadeOrigem, unidadeDestino);
 
             if (resultadoPotencia != -1)
                 printf("A conversão de %.2lf %s é %.2lf %s.\n", valorPotencia, unidadeOrigem, resultadoPotencia, unidadeDestino);

@@ -102,7 +102,7 @@ int main()
          case 7: // Conversão de potência
          {
             double valorPotencia;
-            char unidadeOrigem[3], unidadeDestino[3];
+            char* unidadeOrigem[3], unidadeDestino[3];
 
             printf("Digite o valor da potência a ser convertido: ");
             scanf("%lf", &valorPotencia);
@@ -113,7 +113,7 @@ int main()
             printf("Digite a unidade de destino (W, kW, cv): ");
             scanf("%s", unidadeDestino);
 
-            double resultadoPotencia = conversor_potencia(valorPotencia, unidadeOrigem, unidadeDestino);
+            double resultadoPotencia = conversor_potencia(valorPotencia, unidadeOrigem[0], unidadeDestino[0]);
 
             if (resultadoPotencia != -1)
                 printf("A conversão de %.2lf %s é %.2lf %s.\n", valorPotencia, unidadeOrigem, resultadoPotencia, unidadeDestino);

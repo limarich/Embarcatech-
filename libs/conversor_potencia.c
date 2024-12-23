@@ -3,14 +3,14 @@
 
 // Função para converter potência
 // Aceita unidades: W (Watts), k (Kilowatts), c (Cavalos-vapor)
-double conversor_potencia(double valor, char fromUnit, char toUnit) {
+double conversor_potencia(double valor, char* fromUnit, char* toUnit) {
     double result = -1;
 
     // Converter de Watts para outras unidades
-    if (fromUnit == 'W' || fromUnit == 'w') {
-        if (toUnit == 'KW' || toUnit == 'kw'|| toUnit == 'Kw'|| toUnit == 'kW') {
+    if (strcmp(fromUnit, "W") == 0 || strcmp(fromUnit, "w") == 0) {
+       if ((strcmp(toUnit, "KW") == 0 || strcmp(toUnit, "kw") == 0) ||  (strcpm(toUnit, "Kw") == 0) || (strcmp(toUnit, "kW") == 0)) {
             result = valor / 1000.0; // Watts para Quilowatts
-        } else if (toUnit == 'CV' || toUnit == 'cv'|| toUnit == 'Cv'|| toUnit == 'cV') {
+        } else if ((strcmp(toUnit == 'CV') == 0 || toUnit == 'cv'|| toUnit == 'Cv'|| toUnit == 'cV')) {
             result = valor / 735.5; // Watts para Cavalos-vapor
         } else if (toUnit == 'W' || toUnit == 'w') {
             result = valor; // Sem conversão

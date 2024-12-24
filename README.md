@@ -37,9 +37,9 @@ Para utilizar a biblioteca Embarcatech:
   ```
 2. Realize a compilação, da seguinte forma:
   ```bash
-   gcc -o conversor-grupo-4 main.c [libs/nome_da_lib.c]
+   gcc -o conversor-grupo-4 main.c libs/*.c
   ```
-> Exemplo: `gcc -o conversor-grupo-4 main.c libs/area.c libs/   conversor_mps_kmh.c`
+> Obs: no comando acima usamos o coringa `*` para realizar a compilação com todas as bibliotecas de conversão existentes.
 
 ## ⚙️ Execução do sistema:
   ```bash

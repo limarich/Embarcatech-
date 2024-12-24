@@ -67,15 +67,56 @@ int main()
 
             // Conversão da área
             if (strcmp(saida, "mm") == 0)
-                printf("Área convertida: %.15lf\n", convert_to_millimeter(area, entrada));
+            {
+                printf("Área convertida, o valor retornado é: %.15lf\n", convert_to_millimeter(area, entrada));
+                printf("O que deseja fazer? Digite:\n");
+                printf("0. Para sair\n");
+                printf("10. Para retornar ao menu principal\n");
+                printf("Digite a escolha: ");
+                scanf("%d", &op);
+                break;
+            }
             else if (strcmp(saida, "cm") == 0)
-                printf("Área convertida: %.15lf\n", convert_to_centimeter(area, entrada));
+            {
+                printf("Área convertida, o valor retornado é: %.15lf\n", convert_to_centimeter(area, entrada));
+                printf("O que deseja fazer? Digite:\n");
+                printf("0. Para sair\n");
+                printf("10. Para retornar ao menu principal\n");
+                printf("Digite a escolha: ");
+                scanf("%d", &op);
+                break;
+            }
             else if (strcmp(saida, "m") == 0)
-                printf("Área convertida: %.15lf\n", convert_to_meters(area, entrada));
+            {
+                printf("Área convertida, o valor retornado é:: %.15lf\n", convert_to_meters(area, entrada));
+                printf("O que deseja fazer? Digite:\n");
+                printf("0. Para sair\n");
+                printf("10. Para retornar ao menu principal\n");
+                printf("Digite a escolha: ");
+                scanf("%d", &op);
+                break;
+            }
             else if (strcmp(saida, "ha") == 0)
-                printf("Área convertida: %.15lf\n", convert_to_hectare(area, entrada));
+            {
+                printf("Área convertida, o valor retornado é:: %.15lf\n", convert_to_hectare(area, entrada));
+                printf("O que deseja fazer? Digite:\n");
+                printf("0. Para sair\n");
+                printf("10. Para retornar ao menu principal\n");
+                printf("Digite a escolha: ");
+                scanf("%d", &op);
+                break;
+            }
+
             else if (strcmp(saida, "km") == 0)
-                printf("Área convertida: %.15lf\n", convert_to_kilometers(area, entrada));
+            {
+                printf("Área convertida, o valor retornado é:: %.15lf\n", convert_to_kilometers(area, entrada));
+                printf("O que deseja fazer? Digite:\n");
+                printf("0. Para sair\n");
+                printf("10. Para retornar ao menu principal\n");
+                printf("Digite a escolha: ");
+                scanf("%d", &op);
+                break;
+            }
             break;
 
         case 5: // Conversão de temperatura
@@ -98,9 +139,8 @@ int main()
         }
         break;
 
-
-         case 7: // Conversão de potência
-         {
+        case 7: // Conversão de potência
+        {
             double valorPotencia;
             char unidadeOrigem[3], unidadeDestino[3];
 
@@ -121,7 +161,6 @@ int main()
                 printf("ERRO: Conversão inválida ou não suportada.\n");
         }
         break;
-
 
         case 8: // Conversão de tempo
             printf("Qual a unidade de entrada (s para segundos, m para minutos, h para horas)? ");
@@ -156,7 +195,6 @@ int main()
             else
                 printf("Tempo convertido: %.2f %c\n", resultadoTempo, unidadeSaida);
             break;
-
 
         case 9: // Conversão de unidades de armazenamento
         {

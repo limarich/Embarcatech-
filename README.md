@@ -53,3 +53,7 @@ Para utilizar a biblioteca Embarcatech:
 Imagine um engenheiro que precisa traduzir medidas entre sistemas métricos em projetos de construção. Por exemplo, converter desenhos técnicos feitos em metros para pés ou polegadas.
 - Engenharia Elétrica
 Imagine um engenheiro elétrico qure precisa realizar ajustes relacionados a sistemas que exigem conversões precisas de unidades e bases numéricas. Por exemplo: Conversão de energia ou potência entre unidades como joules, watts e quilowatts-hora.
+- Engenharia Térmica
+Inclui suporte para conversões entre escalas de temperatura (Celsius, Fahrenheit e Kelvin), simplificando cálculos em projetos industriais e acadêmicos.
+
+

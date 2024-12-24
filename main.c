@@ -102,7 +102,7 @@ int main()
          case 7: // Conversão de potência
          {
             double valorPotencia;
-            char* unidadeOrigem[3], unidadeDestino[3];
+            char unidadeOrigem[3], unidadeDestino[3];
 
             printf("Digite o valor da potência a ser convertido: ");
             scanf("%lf", &valorPotencia);

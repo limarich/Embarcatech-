@@ -4,7 +4,7 @@
 
 // Função para converter potência
 // Aceita unidades: W (Watts), k (Kilowatts), c (Cavalos-vapor)
-double conversor_potencia(double valor,  char* fromUnit, char* toUnit) {
+double conversor_potencia(double valor,  char fromUnit, char toUnit) {
     double result = -1;
 
     // Converter de Watts para outras unidades

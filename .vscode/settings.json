@@ -1,0 +1,10 @@
+{
+    "files.associations": {
+        "*.html": "html",
+        "*.css": "css",
+        "conversor_unidade_tempo.h": "c",
+        "conversor_mps_kmh.h": "c",
+        "area.h": "c",
+        "conversor_unidades_storage.h": "c"
+    }
+}

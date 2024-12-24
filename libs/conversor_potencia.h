@@ -1,6 +1,7 @@
 #ifndef CONVERSOR_POTENCIA_H
 #define CONVERSOR_POTENCIA_H
 
-float realizar_conversao(int opcao, float valor);
+// Declaração da função
+double conversor_potencia(double valor, const char* fromUnit, const char* toUnit);
 
 #endif // CONVERSOR_POTENCIA_H

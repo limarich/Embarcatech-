@@ -102,7 +102,7 @@ int main()
          case 7: // Conversão de potência
          {
             double valorPotencia;
-            char* unidadeOrigem[3], unidadeDestino[3];
+            char unidadeOrigem[3], unidadeDestino[3];
 
             printf("Digite o valor da potência a ser convertido: ");
             scanf("%lf", &valorPotencia);
@@ -182,13 +182,14 @@ int main()
         //         printf("ERRO: Unidades inválidas ou conversão não suportada.\n");
         // }
         // break;
-        // default:
-        //     printf("Opção inválida, digite:\n");
-        //     printf("0. Para sair\n");
-        //     printf("10. Para retornar ao menu principal\n");
-        //     printf("Digite a escolha: ");
-        //     scanf("%d", &op);
-        //     break;
+        
+        default:
+            printf("Opção inválida, digite:\n");
+            printf("0. Para sair\n");
+            printf("10. Para retornar ao menu principal\n");
+            printf("Digite a escolha: ");
+            scanf("%d", &op);
+            break;
 
         }
     } while (op != 0);

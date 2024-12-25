@@ -11,6 +11,7 @@
 - Joseph
 - Julia Santana
 - Richard Lima
+- Ian Borges
 
 ## 🚀 Funcionalidades  
 

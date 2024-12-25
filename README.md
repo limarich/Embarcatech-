@@ -56,6 +56,35 @@ Imagine um engenheiro elétrico qure precisa realizar ajustes relacionados a sis
 - Engenharia Térmica
 Inclui suporte para conversões entre escalas de temperatura (Celsius, Fahrenheit e Kelvin), simplificando cálculos em projetos industriais e acadêmicos.
 
+### 📐 Conversor de Área
+
+O conversor de área, é uma biblioteca construída em linguagem C, onde permite a conversão entre diferentes unidades de medida. As suas funções permitem realizar o cálculo automaticamente, e sua interface é simples e eficiente, solicitando ao usuário a unidade de entrada, o valor da área e a unidade de saída, para obter um resultado imediato. A aplicação assume que os dados fornecidos sobre as unidades de entrada e saída estão corretas, realizando verificação apenas em casos graves.
+
+#### 🧮 unidades permitidas
+
+As seguintes unidades área são aceitas no conversor:
+
+1. milímetros quadrados
+2. centímetros quadrados
+3. metros quadrados
+4. hectares
+5. quilômetros quadrados
+
+#### 🛠️ Forma de uso
+
+O usuário deve seguir os seguintes passos:
+
+1. escolher a opção 1 do menu principal;
+2. inserir a unidade de entrada;
+3. inserir a unidade de saída;
+4. informar o valor da área a ser convertida;
+  
+Após as informações serem fornecidas o conversor será executado e o valor convertido retornado.
+
+#### ⚠️ Observações
+
+1. *Erros*: em caso das unidades de entrada e saída forem as mesmas ou a área informada for menor que 0 (ex.: -0.0001), o programa é interrompido e o erro é informado ao usuário;
+
 ### 🌡️ Conversor de Temperaturas
 
 O Conversor de Temperaturas tem o uso simples, porém, muito eficaz. Quando a aplicação for iniciada e o usuário escolher a opção de conversão de temperaturas, ele será redirecionado a sessão onde a aplicação irá perguntar: "Insira a temperatura e a unidade de origem (ex: 100 C): ", a própria aplicação já mostra ao usuário como a inserção de dados deve ser inserida (número* _espaço unidade-de-temperatura*). Depois do usuário inserir a temperatura que deseja converter para uma outra unidade, ele escolhe para qual outra unidade ele quer que seja convertida (C ou C para Celsius, K ou k para Kelvin, F ou f para Fahrenheit), após ele confirmar a unidade de temnperatura, a aplicação irá retornar o numero convertido.

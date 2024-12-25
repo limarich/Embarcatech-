@@ -6,7 +6,7 @@
 
 - Emily Cerqueira
 - Victor G. S.
-- John Porto
+- Jônathas Porto
 - Jônatas da Silva
 - Joseph
 - Julia Santana
@@ -19,6 +19,7 @@
   - Comprimento (metros, milímetros, polegadas, pés).
   - Área (milímetros quadrados, centímetros quadrados, metros quadrados, hectômetros quadrados e quilômetro quadrados).
   - Volume (metros cúbicos, litros, galões).
+  - Potência (watts, quilowatts, cavalos-vapor).
 - Fácil integração com projetos em C.
 - Simples de usar e configurável.
 
@@ -60,7 +61,7 @@ Inclui suporte para conversões entre escalas de temperatura (Celsius, Fahrenhei
 
 O conversor de área, é uma biblioteca construída em linguagem C, onde permite a conversão entre diferentes unidades de medida. As suas funções permitem realizar o cálculo automaticamente, e sua interface é simples e eficiente, solicitando ao usuário a unidade de entrada, o valor da área e a unidade de saída, para obter um resultado imediato. A aplicação assume que os dados fornecidos sobre as unidades de entrada e saída estão corretas, realizando verificação apenas em casos graves.
 
-#### 🧮 unidades permitidas
+### 🧮 unidades permitidas
 
 As seguintes unidades área são aceitas no conversor:
 
@@ -70,7 +71,7 @@ As seguintes unidades área são aceitas no conversor:
 4. hectares
 5. quilômetros quadrados
 
-#### 🛠️ Forma de uso
+### 🛠️ Forma de uso
 
 O usuário deve seguir os seguintes passos:
 
@@ -81,16 +82,16 @@ O usuário deve seguir os seguintes passos:
   
 Após as informações serem fornecidas o conversor será executado e o valor convertido retornado.
 
-#### ⚠️ Observações
+### ⚠️ Observações
 
 1. *Erros*: em caso das unidades de entrada e saída forem as mesmas ou a área informada for menor que 0 (ex.: -0.0001), o programa é interrompido e o erro é informado ao usuário;
 
-### 🌡️ Conversor de Temperaturas
+#### 🌡️ Conversor de Temperaturas
 
 O Conversor de Temperaturas tem o uso simples, porém, muito eficaz. Quando a aplicação for iniciada e o usuário escolher a opção de conversão de temperaturas, ele será redirecionado a sessão onde a aplicação irá perguntar: "Insira a temperatura e a unidade de origem (ex: 100 C): ", a própria aplicação já mostra ao usuário como a inserção de dados deve ser inserida (número* _espaço unidade-de-temperatura*). Depois do usuário inserir a temperatura que deseja converter para uma outra unidade, ele escolhe para qual outra unidade ele quer que seja convertida (C ou C para Celsius, K ou k para Kelvin, F ou f para Fahrenheit), após ele confirmar a unidade de temnperatura, a aplicação irá retornar o numero convertido.
 Observações: se o usuário escolher determinada temperatura e unidade de medida e no momento que ele escolher para qual unidade de medida quer converter for a mesma inicial, a aplicação irá retornar o mesmo número e unidade de medida iniciais, pois a conversão de celsius para celcius não altera o valor (o memso vale para as outras unidade de temperatura).
 
-### 💾 Conversor de Unidades de Armazenamento
+#### 💾 Conversor de Unidades de Armazenamento
 
 O Conversor de Unidades de Armazenamento é uma ferramenta simples e eficaz para converter valores entre diferentes unidades de armazenamento digital, como **bit**, **byte**, **kilobyte**, **megabyte**, **gigabyte** e **terabyte**. Este conversor é ideal para sistemas que precisam realizar cálculos precisos entre as unidades de armazenamento.
 
@@ -139,4 +140,41 @@ O sistema utiliza a seguinte tabela de fatores de conversão (todos em relação
 2. **Conversão entre a Mesma Unidade:** Se a unidade de origem for igual à unidade de destino, o valor retornado será o mesmo fornecido como entrada.
 
 ---
+##### ⚡ Conversor de Potência
 
+O conversor de potência permite realizar a conversão entre diferentes unidades de potência, incluindo **Watts (W)**, **Quilowatts (kW)** e **Cavalos-vapor (cv)**. Esta funcionalidade é ideal para aplicações em engenharia elétrica, mecânica e outras áreas que demandam cálculos precisos de potência.
+
+
+##### 🛠️ Funcionamento
+O sistema aceita entradas no formato:
+- **Valor numérico**: Representa a magnitude da potência.
+- **Unidade de origem**: Unidade da potência fornecida pelo usuário.
+- **Unidade de destino**: Unidade para a qual a potência será convertida.
+
+
+##### 🌟 Unidades Aceitas
+1. **W** ou **w**: Watts.
+2. **KW**, **kW**, **kw**, **Kw**: Quilowatts.
+3. **CV**, **cv**, **Cv**, **cV**: Cavalos-vapor.
+
+
+##### 🧮 Exemplo de Uso
+Ao executar o programa, o usuário deve:
+1. Informar o valor da potência.
+2. Especificar a unidade de origem (exemplo: `W` para Watts).
+3. Especificar a unidade de destino (exemplo: `KW` para Quilowatts).
+
+**Exemplo:**
+Para converter `1000 W` para **Quilowatts (kW)**:
+- O valor de entrada será `1000`.
+- A unidade de origem será `W`.
+- A unidade de destino será `KW`.
+O sistema retornará: **A conversão de `1000 W` para `1 KW`.**
+
+
+##### ⚠️ Observações
+1. **Validação de Unidades**: O sistema verifica se as unidades fornecidas pelo usuário são válidas. Caso contrário, o valor retornado será `-1` para indicar erro.
+2. **Conversão para a Mesma Unidade**: Se as unidades de origem e destino forem iguais, o sistema retornará o valor fornecido sem alterações.
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------

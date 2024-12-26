@@ -62,7 +62,7 @@ Inclui suporte para conversões entre escalas de temperatura (Celsius, Fahrenhei
 
 O conversor de área, é uma biblioteca construída em linguagem C, onde permite a conversão entre diferentes unidades de medida. As suas funções permitem realizar o cálculo automaticamente, e sua interface é simples e eficiente, solicitando ao usuário a unidade de entrada, o valor da área e a unidade de saída, para obter um resultado imediato. A aplicação assume que os dados fornecidos sobre as unidades de entrada e saída estão corretas, realizando verificação apenas em casos graves.
 
-### 🧮 unidades permitidas
+#### 🧮 unidades permitidas
 
 As seguintes unidades área são aceitas no conversor:
 
@@ -72,7 +72,7 @@ As seguintes unidades área são aceitas no conversor:
 4. hectares
 5. quilômetros quadrados
 
-### 🛠️ Forma de uso
+#### 🛠️ Forma de uso
 
 O usuário deve seguir os seguintes passos:
 
@@ -83,7 +83,7 @@ O usuário deve seguir os seguintes passos:
   
 Após as informações serem fornecidas o conversor será executado e o valor convertido retornado.
 
-### ⚠️ Observações
+#### ⚠️ Observações
 
 1. *Erros*: em caso das unidades de entrada e saída forem as mesmas ou a área informada for menor que 0 (ex.: -0.0001), o programa é interrompido e o erro é informado ao usuário;
 

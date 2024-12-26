@@ -194,6 +194,18 @@ A função conversor_volume aceita três parâmetros:
 
 Com base nos parâmetros, o código calcula e retorna o valor convertido, exibindo também o resultado no console com precisão de 8 casas decimais.
 
+##### 🧮 Exemplo de Uso
+Ao executar o programa, o usuário deve:
+1. Informar a unidade que se deseja converter.
+2. Informar a unidade final de conversão.
+3. Informar o valor a ser convertido.
+
+**Exemplo:**
+Para converter `2000 l` para **metros cúbicos (m³)**:
+- A unidade a ser convertida `l` que é litros.
+- A unidade final de conversão `m3` que é metros cúbicos.
+- E o valor que será convertido `2000`.
+
 #### 🚫 Tratamento de Erros 
 Se for fornecida uma unidade inválida, o programa exibe a mensagem:
 

@@ -5,7 +5,7 @@
 ## 👨🏻‍💻 Componentes do grupo 4
 
 - Emily Cerqueira
-- Victor G. S.
+- Vitor Santos 
 - Jônathas Porto
 - Jônatas da Silva
 - Joseph

@@ -177,5 +177,26 @@ O sistema retornará: **A conversão de `1000 W` para `1 KW`.**
 1. **Validação de Unidades**: O sistema verifica se as unidades fornecidas pelo usuário são válidas. Caso contrário, o valor retornado será `-1` para indicar erro.
 2. **Conversão para a Mesma Unidade**: Se as unidades de origem e destino forem iguais, o sistema retornará o valor fornecido sem alterações.
 
+---
+#### 💧 Conversor de Volume
+O módulo conversor_volume é uma funcionalidade essencial da biblioteca embarca_kit, projetada para facilitar a conversão entre diferentes unidades de volume. Ele suporta as seguintes unidades:
+
+- Litros (l)
+- Mililitros (ml)
+- Metros cúbicos (m³)
+
+#### 🛠️ Funcionamento
+A função conversor_volume aceita três parâmetros:
+
+1. **unidade_inicial**: A unidade do valor fornecido (string: "l", "ml", ou "m3").
+2. **unidade_final**: A unidade para a qual o valor será convertido (string: "l", "ml", ou "m3").
+3. **valor**: O valor numérico a ser convertido (float).
+
+Com base nos parâmetros, o código calcula e retorna o valor convertido, exibindo também o resultado no console com precisão de 8 casas decimais.
+
+#### 🚫 Tratamento de Erros 
+Se for fornecida uma unidade inválida, o programa exibe a mensagem:
+
+conversão incorreta!
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------

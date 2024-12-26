@@ -11,7 +11,7 @@
 #include "libs/temperatura.h"
 #include "libs/conversor_unidades_storage.h"
 #include "libs/conversor_potencia.h"
-#include "conversor_de_volume.h"
+#include "libs/conversor_de_volume.h"
 
 int main()
 {
@@ -33,12 +33,12 @@ int main()
         printf("1. Área (milímetros quadrados, centímetros quadrados, metros quadrados, hectômetros quadrados e quilômetro quadrados)\n");
         printf("2. Volume (metros cúbicos, litros, mililitros)\n");
         printf("3. Comprimento (metro, centímetro, milímetro)\n");
-        printf("4. Massa (quilograma, grama, tonelada)\n");
-        printf("5. Temperatura (Celsius, Fahrenheit, Kelvin)\n");
-        printf("6. Velocidade (km/h, m/s, mph)\n");
-        printf("7. Potencia (Watts, quilowatts, cavalos-vapor)\n");
-        printf("8. Tempo (segundos, minutos, horas)\n");
-        printf("9. Armazenamento (Bits, Bytes, Kilobytes, Megabytes, Gigabytes, Terabytes)\n");
+        // printf("4. Massa (quilograma, grama, tonelada)\n");
+        printf("4. Temperatura (Celsius, Fahrenheit, Kelvin)\n");
+        printf("5. Velocidade (km/h, m/s, mph)\n");
+        printf("6. Potencia (Watts, quilowatts, cavalos-vapor)\n");
+        printf("7. Tempo (segundos, minutos, horas)\n");
+        printf("8. Armazenamento (Bits, Bytes, Kilobytes, Megabytes, Gigabytes, Terabytes)\n");
         printf("=====================================================================================================================\n");
         printf("Escolha a conversão desejada: ");
         scanf("%d", &op);
@@ -121,26 +121,26 @@ int main()
             }
             break;
 
-        case 2: // Nova opção para conversão de volume 
-        { 
+        case 2: // Nova opção para conversão de volume
+        {
             float valor;
             char unidadeInicial[3], unidadeFinal[3];
-            
-            printf("Digite o valor a ser convertido: "); 
-            scanf("%f", &valor); 
-            
-            printf("Digite a unidade de origem (l, ml, m3): "); 
-            scanf("%s", unidadeInicial); 
-            
+
+            printf("Digite o valor a ser convertido: ");
+            scanf("%f", &valor);
+
+            printf("Digite a unidade de origem (l, ml, m3): ");
+            scanf("%s", unidadeInicial);
+
             printf("Digite a unidade de destino (l, ml, m3): ");
-            scanf("%s", unidadeFinal); 
-            
+            scanf("%s", unidadeFinal);
+
             float resultadoVolume = conversor_volume(unidadeInicial, unidadeFinal, valor);
-            if (resultadoVolume != -1) 
+            if (resultadoVolume != -1)
                 printf("O valor convertido é: %.8f %s\n", resultadoVolume, unidadeFinal);
-            else 
-                printf("ERRO: Unidades inválidas ou conversão não suportada.\n"); 
-        } 
+            else
+                printf("ERRO: Unidades inválidas ou conversão não suportada.\n");
+        }
         break;
 
         case 3:
@@ -166,7 +166,7 @@ int main()
         }
         break;
 
-        case 5: // Conversão de temperatura
+        case 4: // Conversão de temperatura
         {
             float inputTemp;
             char inputUnit, outputUnit;
@@ -186,25 +186,26 @@ int main()
         }
         break;
 
-        case 6: // Conversão de Velocidade
+        case 5: // Conversão de Velocidade
         {
             float mps, kmh;
             printf("Digite a velocidade em metros por segundo (m/s): ");
-        
+
             // Valida a entrada do usuário
-            if (scanf("%f", &mps) != 1) {
+            if (scanf("%f", &mps) != 1)
+            {
                 printf("Entrada inválida. Por favor, insira um número.\n");
-                return;
+                break;
             }
-        
+
             // Fórmula de conversão
             kmh = mps * 3.6;
-        
+
             printf("%.2f metros por segundo equivalem a %.2f quilômetros por hora.\n", mps, kmh);
         }
         break;
-            
-        case 7: // Conversão de potência
+
+        case 6: // Conversão de potência
         {
             double valorPotencia;
             char unidadeOrigem[3], unidadeDestino[3];
@@ -227,7 +228,7 @@ int main()
         }
         break;
 
-        case 8: // Conversão de tempo
+        case 7: // Conversão de tempo
             printf("Qual a unidade de entrada (s para segundos, m para minutos, h para horas)? ");
             scanf(" %c", &unidadeEntrada);
 
@@ -261,7 +262,7 @@ int main()
                 printf("Tempo convertido: %.2f %c\n", resultadoTempo, unidadeSaida);
             break;
 
-        case 9: // Conversão de unidades de armazenamento
+        case 8: // Conversão de unidades de armazenamento
         {
             double value;
             int fromUnit, toUnit;

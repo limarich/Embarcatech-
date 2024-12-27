@@ -202,7 +202,8 @@ int main()
         
             printf("%.2f metros por segundo equivalem a %.2f quilômetros por hora.\n", mps, kmh);
         }
-
+        break;
+            
         case 7: // Conversão de potência
         {
             double valorPotencia;

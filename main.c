@@ -11,6 +11,7 @@
 #include "libs/temperatura.h"
 #include "libs/conversor_unidades_storage.h"
 #include "libs/conversor_potencia.h"
+#include "conversor_de_volume.h"
 
 int main()
 {
@@ -30,7 +31,7 @@ int main()
         printf("=================================Bem vindo ao Sistema de conversão de unidades=======================================\n");
         printf("------------------------------------------------- Embarca_kit -------------------------------------------------------\n");
         printf("1. Área (milímetros quadrados, centímetros quadrados, metros quadrados, hectômetros quadrados e quilômetro quadrados)\n");
-        printf("2. Volume (metros cúbicos, litros, galões)\n");
+        printf("2. Volume (metros cúbicos, litros, mililitros)\n");
         printf("3. Comprimento (metro, centímetro, milímetro)\n");
         printf("4. Massa (quilograma, grama, tonelada)\n");
         printf("5. Temperatura (Celsius, Fahrenheit, Kelvin)\n");
@@ -119,6 +120,28 @@ int main()
                 break;
             }
             break;
+
+        case 2: // Nova opção para conversão de volume 
+        { 
+            float valor;
+            char unidadeInicial[3], unidadeFinal[3];
+            
+            printf("Digite o valor a ser convertido: "); 
+            scanf("%f", &valor); 
+            
+            printf("Digite a unidade de origem (l, ml, m3): "); 
+            scanf("%s", unidadeInicial); 
+            
+            printf("Digite a unidade de destino (l, ml, m3): ");
+            scanf("%s", unidadeFinal); 
+            
+            float resultadoVolume = conversor_volume(unidadeInicial, unidadeFinal, valor);
+            if (resultadoVolume != -1) 
+                printf("O valor convertido é: %.8f %s\n", resultadoVolume, unidadeFinal);
+            else 
+                printf("ERRO: Unidades inválidas ou conversão não suportada.\n"); 
+        } 
+        break;
 
         case 3:
         {

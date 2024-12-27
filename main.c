@@ -7,6 +7,7 @@
 #include "libs/conversor_mps_kmh.h"
 #include "libs/conversor_unidade_tempo.h"
 #include "libs/area.h"
+#include "libs/conversor_comprimento.h"
 #include "libs/temperatura.h"
 #include "libs/conversor_unidades_storage.h"
 #include "libs/conversor_potencia.h"

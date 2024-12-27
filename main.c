@@ -186,6 +186,23 @@ int main()
         }
         break;
 
+        case 6: // Conversão de Velocidade
+        {
+            float mps, kmh;
+            printf("Digite a velocidade em metros por segundo (m/s): ");
+        
+            // Valida a entrada do usuário
+            if (scanf("%f", &mps) != 1) {
+                printf("Entrada inválida. Por favor, insira um número.\n");
+                return;
+            }
+        
+            // Fórmula de conversão
+            kmh = mps * 3.6;
+        
+            printf("%.2f metros por segundo equivalem a %.2f quilômetros por hora.\n", mps, kmh);
+        }
+
         case 7: // Conversão de potência
         {
             double valorPotencia;

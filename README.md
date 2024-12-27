@@ -211,4 +211,38 @@ Se for fornecida uma unidade inválida, o programa exibe a mensagem:
 
 conversão incorreta!
 
+## 📏 Conversor de Comprimento
+
+O conversor de comprimento permite realizar a conversão entre diferentes unidades de medida de comprimento, como **centímetros (cm)**, **metros (m)** e **milímetros (mm)**. Esta funcionalidade é ideal para aplicações que requerem precisão na conversão de unidades de comprimento.
+
+### 🛠️ Funcionamento
+O sistema opera da seguinte forma:
+- **Valor numérico**: A quantidade de comprimento que você deseja converter.
+- **Unidade de origem**: A unidade de medida atual do comprimento.
+- **Unidade de destino**: A unidade para a qual você deseja converter o comprimento.
+
+### 🌟 Unidades Aceitas
+1. **cm**: Centímetros.
+2. **m**: Metros.
+3. **mm**: Milímetros.
+
+### 🧮 Exemplo de Uso
+Para utilizar o conversor, siga estas etapas:
+1. Informe o valor do comprimento.
+2. Especifique a unidade de origem (exemplo: `cm` para centímetros).
+3. Especifique a unidade de destino (exemplo: `m` para metros).
+
+**Exemplo:**
+Para converter `100 cm` para metros:
+- O valor de entrada será `100`.
+- A unidade de origem será `cm`.
+- A unidade de destino será `m`.
+
+O sistema retornará: **A conversão de `100 cm` resulta em `1 m`.**
+
+### ⚠️ Observações
+1. **Validação de Unidades**: O sistema verifica se as unidades fornecidas são válidas. Caso contrário, retorna `-1` para indicar erro.
+2. **Conversão para a Mesma Unidade**: Se as unidades de origem e destino forem iguais, o sistema retorna o valor de entrada sem alterações.
+
+
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------

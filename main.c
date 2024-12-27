@@ -137,7 +137,7 @@ int main()
             double resultadoComprimento = conversor_comprimento(value, unidadeAtual, unidadeConversao);
 
             if (resultadoComprimento != -1)
-                printf("O valor convertido é: %.2lf %s\n", resultadoComprimento, unidadeConversao);
+                printf("O valor convertido é: %.6lf %s\n", resultadoComprimento, unidadeConversao);
             else
                 printf("ERRO: Unidades inválidas ou conversão não suportada.\n");
         }

@@ -119,6 +119,29 @@ int main()
             }
             break;
 
+        case 3:
+        {
+            double value;
+            char unidadeAtual[3], unidadeConversao[3];
+
+            printf("Digite o valor a ser convertido: ");
+            scanf("%lf", &value);
+
+            printf("Digite a unidade de origem (mm, cm, m): ");
+            scanf("%s", unidadeAtual);
+
+            printf("Digite a unidade de destino (mm, cm, m): ");
+            scanf("%s", unidadeConversao);
+
+            double resultadoComprimento = conversor_comprimento(value, unidadeAtual, unidadeConversao);
+
+            if (resultadoComprimento != -1)
+                printf("O valor convertido é: %.2lf %s\n", resultadoComprimento, unidadeConversao);
+            else
+                printf("ERRO: Unidades inválidas ou conversão não suportada.\n");
+        }
+        break;
+
         case 5: // Conversão de temperatura
         {
             float inputTemp;

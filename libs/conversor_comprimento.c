@@ -8,6 +8,7 @@
 */
 
 double conversor_comprimento(double value, const char* unidadeAtual, const char* unidadeConversao)
+
 {
   if (strcmp(unidadeAtual, "cm") == 0) { //centímetros
     value = strcmp(unidadeConversao, "m") == 0 ? value / 100 : value * 10;
